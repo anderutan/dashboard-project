@@ -96,7 +96,7 @@ main {
 
 .top {
   display: grid;
-  height: 17vh;
+  height: 19vh;
   grid-template-rows: 50px 1fr;
   grid-template-areas:
     'search-bar search-bar top-profile'
@@ -188,10 +188,10 @@ main {
   grid-template-areas:
     'project project project announcement'
     'project project project trending';
+  background-color: rgb(226, 232, 240);
 }
 
 .cards {
-  background-color: blanchedalmond;
   grid-area: project;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -239,12 +239,12 @@ main {
 }
 
 .announcement {
-  background-color: cadetblue;
   grid-area: announcement;
   padding: 30px 30px 30px 0;
 }
 
-.announcement-card {
+.announcement-card,
+.profile-cards {
   background-color: white;
   padding: 0 20px 20px 20px;
   margin: 10px 0;
@@ -272,6 +272,39 @@ main {
 }
 
 .trending {
-  background-color: coral;
   grid-area: trending;
+  padding: 30px 30px 30px 0;
+}
+
+.profile-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-areas:
+    'image link link link'
+    'image name name name';
+  padding: 20px;
+}
+
+.profile-card:first-child {
+  padding-top: 30px;
+}
+
+.profile-card > .profile-image {
+  grid-area: image;
+  width: 50px;
+  justify-self: center;
+}
+
+.profile-card > .profile-link {
+  grid-area: link;
+}
+
+.profile-card > .profile-name {
+  grid-area: name;
 }
