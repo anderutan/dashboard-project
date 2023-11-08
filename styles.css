@@ -119,6 +119,7 @@ main {
   height: 25px;
   border: none;
   background-color: rgb(226, 232, 240);
+  padding-left: 10px;
 }
 
 .top-profile {
@@ -166,6 +167,7 @@ main {
   background-color: rgb(25, 146, 212);
   color: white;
   padding: 10px 30px;
+  font-weight: 700;
 }
 
 .search-bar > svg,
@@ -179,4 +181,97 @@ main {
 
 .profile > img {
   height: 100px;
+}
+
+.bottom {
+  display: grid;
+  grid-template-areas:
+    'project project project announcement'
+    'project project project trending';
+}
+
+.cards {
+  background-color: blanchedalmond;
+  grid-area: project;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto auto;
+  padding: 30px;
+  gap: 20px 30px;
+}
+
+.card-title {
+  grid-column: 1/-1;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card {
+  background-color: white;
+  height: fit-content;
+  padding: 30px;
+  border-left: 5px solid rgb(255, 157, 0);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card > .title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card > .description,
+.announcement-card > .description {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.link > svg {
+  width: 25px;
+  fill: rgba(0, 0, 0, 0.7);
+}
+
+.link {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+.announcement {
+  background-color: cadetblue;
+  grid-area: announcement;
+  padding: 30px 30px 30px 0;
+}
+
+.announcement-card {
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.announcement > .card-title {
+  padding-bottom: 10px;
+}
+
+.announcement-card > .title {
+  font-weight: 600;
+  padding-top: 20px;
+  margin-bottom: -5px;
+}
+
+.announcement-card > .description {
+  padding-bottom: 15px;
+  border-bottom: 1px solid grey;
+}
+
+.announcement-card > .description:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.trending {
+  background-color: coral;
+  grid-area: trending;
 }
